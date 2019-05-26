@@ -1,0 +1,12 @@
+image: node:8.12.0
+
+pipelines:
+  default:
+    - step:
+        name: Deployment
+        caches:
+          - node
+        script:
+          - git remote add gh git@github.com:globee-hk/test.git
+          - git push gh master
+          - echo "Done."
